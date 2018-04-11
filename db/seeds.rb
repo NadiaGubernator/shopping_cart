@@ -3,7 +3,7 @@ Product.delete_all
 Product.create!(title: 'Seven Mobile Apps in Seven Weeks',
   description:
     %{<p>
-      <em>Native Apps, Multiple Platforms</em>
+      <em>Native Apps, Multiple Platforms</em><br />
       Answer the question “Can we build this for ALL the devices?” with a
       resounding YES. This book will help you get there with a real-world
       introduction to seven platforms, whether you’re new to mobile or an
@@ -16,7 +16,7 @@ Product.create!(title: 'Seven Mobile Apps in Seven Weeks',
 Product.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
   description:
     %{<p>
-      <em>Powerful, Effective, and Efficient Full-Stack Web Development</em>
+      <em>Powerful, Effective, and Efficient Full-Stack Web Development</em><br />
       As a Rails developer, you care about user experience and performance,
       but you also want simple and maintainable code. Achieve all that by
       embracing the full stack of web development, from styling with
@@ -32,7 +32,7 @@ Product.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
 Product.create!(title: 'Ruby Performance Optimization',
   description:
     %{<p>
-      <em>Why Ruby Is Slow, and How to Fix It</em> 
+      <em>Why Ruby Is Slow, and How to Fix It</em><br /> 
       You don’t have to accept slow Ruby or Rails performance. In this
       comprehensive guide to Ruby optimization, you’ll learn how to write
       faster Ruby code – but that’s just the beginning. See exactly what makes

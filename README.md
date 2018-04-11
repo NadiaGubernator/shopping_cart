@@ -1,6 +1,5 @@
 # Online Store
-This application is based on ['Agile Web Development with
-Rails'](https://pragprog.com/book/rails51/agile-web-development-with-rails-5-1).
+This application is based on [*Agile Web Development with Rails*](https://pragprog.com/book/rails51/agile-web-development-with-rails-5-1).
 
 ## Web store with catalog, cart, and orders.
 

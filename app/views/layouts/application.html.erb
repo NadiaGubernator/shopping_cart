@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShoppingCart</title>
+   <title><%= full_title(yield(:title)) %></title>    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= render 'layouts/shim' %>
   </head>
 
-  <body>
-    <main class='<%= controller.controller_name %>'>
-      <%= yield %>
-    </main>
-  </body>
+  <body class='<%= controller.controller_name %>'>
+    <div id="banner">
+      <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+      <span class="title"><%= yield(:title) %></span>
+    </div>
+    <div id="columns">
+      <div id="side">           
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/faq">Questions</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div> 
+    <div id="footer">
+      <div id="footer_container">
+        &copy; <%= copyright_notice_year_range(2018) %> <%= link_to "Svitlana Gubernator", "https://github.com/s-gubernator" , target: '_blank', rel: 'noopener' %>  All Rights Reserved               
+      </div>
+    </div> 
+  </body>  
 </html>

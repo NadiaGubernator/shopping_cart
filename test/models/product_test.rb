@@ -5,10 +5,10 @@ class ProductTest < ActiveSupport::TestCase
 
   def new_product(options = {})
     product = Product.new(
-    	title:       options[:title] || 'Some Title',
-      description: options[:description] || 'lorem ipsum',
+    	title:       options[:title] || 'Test Book Title',
+      description: options[:description] || 'Lorem ipsum dolor sit amet consectetuer.',
       price:       options[:price] || 1.00,
-      image_url:   options[:image_url] || 'some.jpg')
+      image_url:   options[:image_url] || 'test.jpg')
   end
 
   test 'product attributes must not be empty' do

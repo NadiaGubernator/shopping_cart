@@ -14,6 +14,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get products_url
     assert_response :success
+    assert_select 'table td.image',       minimum: 1 
     assert_select 'table td.description', minimum: 1   
   end
 
@@ -30,7 +31,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to product_url(Product.last)
   end
 
-   test "should show product" do
+  test "should show product" do
     get product_url(@product)
     assert_response :success
   end
