@@ -15,7 +15,8 @@
  */
 
 body, body > p, body > ol, body > ul, body > td {
-     margin: 0 !important} 
+  margin: 0 !important;
+  padding: 0} 
 
 #banner {
   position: relative;
@@ -35,13 +36,16 @@ body, body > p, body > ol, body > ul, body > td {
   }
 }
 
-#notice {
-  color: #000, !important;
-  border: 2px solid red;
-  padding: 1em;
-  margin-bottom: 2em;
-  background-color: #f0f0f0;
-  font: bold smaller sans-serif;
+.notice, #notice {
+  color: #882;
+  background: #ffb;
+  border: 0.177em solid #882;
+  border-radius: 0.5em;
+  padding: 1em 1.414em;
+  margin-bottom: 1em;  
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
 }
 
 #notice:empty {
@@ -162,7 +166,6 @@ body, body > p, body > ol, body > ul, body > td {
 /* footer */
 
 #footer {
-  position: relative;
   min-height: 25px;
   background: #9c9;
   padding: 10px;

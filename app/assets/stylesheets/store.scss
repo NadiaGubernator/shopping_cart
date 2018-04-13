@@ -30,11 +30,27 @@
       }
       
       .price {
-      color: #345633;
+      color: #141;
       font-size: 1.414em;
       font-weight: bold;
-      margin-right: 3em;
-    }
+      margin-right: 7em;
+      }
+
+      form, div {
+        display: inline;
+      }
+      input[type="submit"] {
+        background-color: #282;
+        border-radius: 0.25em;
+        border: solid thin #141;
+        box-shadow: 3px 3px 5px grey;
+        color: white;
+        font-size: 1em;
+        padding: 0.25em 0.5em;
+      }
+      input[type="submit"]:hover {
+        background-color: #141;
+      } 
     }
   }
 }

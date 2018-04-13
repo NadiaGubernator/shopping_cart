@@ -12,7 +12,9 @@
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
-      <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+      <%= link_to(store_index_path) do %>
+        <%= image_tag 'logo.svg', alt: 'Bookshelf' %>
+      <% end %>      
       <span class="title"><%= yield(:title) %></span>
     </div>
     <div id="columns">
