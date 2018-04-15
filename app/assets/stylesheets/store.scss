@@ -4,6 +4,9 @@
 
 .store {
   max-width: 80em;
+  td {
+    padding-right: 30px;    
+  }
   ul.catalog {
     border-top: solid thin;
     list-style: none;
