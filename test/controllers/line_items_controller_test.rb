@@ -34,12 +34,12 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_line_item_url(@line_item)
     assert_response :success
-  end  
+  end 
 
   test "should update line_item" do
-    patch line_item_url(@line_item), params: { line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
+    patch line_item_url(@line_item), params: { line_item: { product_id: @line_item.product_id } }
     assert_redirected_to line_item_url(@line_item)
-  end
+  end  
 
   test "should destroy line_item" do
     assert_difference('LineItem.count', -1) do
@@ -47,5 +47,5 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to line_items_url
-  end
+  end  
 end
