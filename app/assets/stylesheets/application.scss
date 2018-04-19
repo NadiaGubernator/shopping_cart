@@ -14,176 +14,241 @@
  *= require_self
  */
 
-body, body > p, body > ol, body > ul, body > td {
-  margin: 0 !important;
-  padding: 0} 
+body {
+  margin: 0;
+  padding: 0;
+}
 
-#banner {
+header.main {  
   position: relative;
   min-height: 40px;
   background: #9c9;
   padding: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
-  text-align: center;
-  
+  margin: 0;
+  border-bottom: 2px solid #bfb;     
   img {
     position: absolute;
     top: 0;
     left: 0;
     width: 192px;
   }
-}
-
-.notice, #notice {
-  color: #882;
-  background: #ffb;
-  border: 0.177em solid #882;
-  border-radius: 0.5em;
-  padding: 1em 1.414em;
-  margin-bottom: 1em;  
-  font-weight: bold;
-  text-align: center;
-  width: 50%;
-}
-
-#notice:empty {
-  display: none;
-}
-
-#columns {
-  background: #141;
-  display: flex;
-  
-  #main {
-    padding: 1em;
-    background: white;
-    flex: 1;
+  h1 {
+    letter-spacing: 0.25em;
+    font: small-caps 30px/30px "Times New Roman", serif;
+    color: #282;
+    text-align: center;
+    margin: 0;
+    padding-top: 7px;
   }
-  
-  #side {
-    padding: 1em 2em;
+  @media (min-width: 30em) {
+    text-align: left; // left align on desktop
+  }  
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column; // mobile is horizontally laid out
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+
+  @media (min-width: 30em) {
+    flex-direction: row;  // desktop is vertically laid out
+    -webkit-box-orient: horizontal;
+  }
+
+  nav {
+    padding-bottom: 1em;
     background: #141;
-    
-    form, div {
-      display: inline;
+    text-align: center;  // mobile has centered nav
+
+    @media (min-width: 30em) {
+      text-align: left; // desktop nav is left-aligned
+      padding: 1em;     // and needs more padding
     }
-    
-    input {
-      font-size: small;
-    }
-    
-    #cart {
-      font-size: smaller;
-      color: white;
-      
-      table {
-        border-top: 1px dotted #595;
-        border-bottom: 1px dotted #595;
-        margin-bottom: 10px;
-      }
-    }
-    
-   ul {
+
+    ul {
       list-style: none;
       margin: 0;
       padding: 0;
+
       @media (min-width: 30em) {
         padding-right: 1em; // give desktop some extra space
       }
-      
+
       li {
         margin: 0;
         padding-top: 1.5em;
         font: bold smaller sans-serif;
-        text-transform: uppercase;                
-        
-        a { 
-          color: #bfb;         
+        text-transform: uppercase; 
+        letter-spacing: 0.2em;
+        a {
+          color: #bfb;
           text-decoration: none;
-        }
-        a:hover {
-          background: none;
-          color: white;
+
+          &:hover {
+            background: none;
+            color: white;
+          }
         }
       }
-    } 
+    }
+
+    nav.logged_in_nav {
+      border-top: solid thin #bfb;
+      padding: 0.354em 0;
+      margin-top: 0.354em;
+
+      input[type="submit"] {
+        // Make the logout button look like a
+        // link, so it matches the nav style
+        background: none;
+        border: none;
+        color: #bfb;
+        font-size: 1em;
+        letter-spacing: 0.354em;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      input[type="submit"]:hover {
+        color: white;
+      }
+    }
+
+    #cart {
+      article {
+        h2 {
+          margin-top: 0;
+        }
+        background: white;
+        border-radius: 0.5em;
+        margin: 1em;
+        padding: 1.414em;
+        @media (min-width: 30em) {
+          margin: 0; // desktop doesn't need this margin
+        }
+      }
+    }
   }
+
+  main {
+    padding: 0.5em;
+  }
+}
+
+.notice, #notice {
+  background: #ffb;
+  border-radius: 0.5em;
+  border: solid 0.177em #882;
+  color: #882;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 1em 1.414em;
+  text-align: center;
 }
 
 .depot_form {
-  fieldset {
-    background: #efe;
-    
-    legend {
-      color: #dfd;
-      background: #141;
-      font-family: sans-serif;
-      padding: 0.2em 1em;
-    }
-    div {
-      margin-bottom: 0.3em;
-    }
+  padding: 0 1em;
+  h1 {
+    font-size: 1.99em;
+    line-height: 1.41em;
+    margin-bottom: 0.5em;
+    padding: 0;
   }
-  
-  form {
-    label {
-      width: 5em;
-      float: left;
-      text-align: right;
-      padding-top: 0.2em;
-      margin-right: 0.1em;
-      display: block;
-    }
-    select, textarea, input {
-      margin-left: 0.5em;
-    }
-    .submit {
-      margin-left: 4em;
-    }
-    br {
-      display: none;
-    }
+  .field, .actions {
+    margin-bottom: 0.5em;
+    padding: 0;
   }
-}
-
-@media all and (max-width: 800px) {
-  #columns {
-    flex-direction: column-reverse;
+  .actions {
+    text-align: right;
+    padding: 1em 0;
   }
-}
-
-@media all and (max-width: 500px) {
-  #banner {
-    height: 1em;
+  input, textarea, select, option {
+    border: solid thin #888;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 0.5em;
+    width: 100%;
   }
-  #banner .title {
-    display: none;
+  label {
+    padding: 0.5em 0;
   }
-}
-
-/* footer */
-
-#footer {
-  min-height: 25px;
-  background: #9c9;
-  padding: 10px;
-  margin-bottom: -5px;
-  border-top: 2px solid;
-  color: #282;
-  #footer_container {    
-    width: 50%;
-    margin: 0 auto;
-    padding: 5px; 
-    text-align: center;   
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {      
-        color: #141;
-        background: none;
+  input[type="submit"] {
+    background-color: #bfb;
+    border-radius: 0.354em;
+    border: solid thin #888;
+    color: black;
+    font-size: 1.41em;
+    font-weight: bold;
+    padding: 0.354em 1em;
+  }
+  input[type="submit"]:hover {
+    background-color: #9d9;
+  }
+  // Also, clean up the error styling
+  #error_explanation {
+    background-color: white;
+    border-radius: 1em;
+    border: solid thin red;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    width: 100%;
+    h2 {
+      background: none;
+      color: red;
+      font-size: 1.41em;
+      line-height: 1.41em;
+      padding: 1em;
+    }
+    ul {
+      margin-top: 0;
+      li {
+        color: red;
+        font-size: 1em;
       }
+    }
+  }
+  .field_with_errors {
+    background: none;
+    color: red;
+    width: 100%;
+    label {
+      font-weight: bold;
+    }
+    label::before {
+      content: "! ";
+    }
+    input,textarea {
+      background: pink;
+    }
+  }
+}
+
+footer {  
+  background: #9c9; 
+  border-top: 2px solid #bfb;
+  color: #282;  
+  table {    
+    width: 100%;      
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }   
+  a {
+    color: gray;
+    text-decoration: none;
+    &:hover {      
+      color: #141;
+      background: none;
     }
   }
 }

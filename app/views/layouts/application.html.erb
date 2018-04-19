@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-   <title><%= full_title(yield(:title)) %></title>    
+   <title><%= full_title(yield(:title)) %></title>   
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,30 +10,21 @@
     <%= render 'layouts/shim' %>
   </head>
 
-  <body class='<%= controller.controller_name %>'>
-    <div id="banner">
-      <%= link_to(store_index_path) do %>
-        <%= image_tag 'logo.svg', alt: 'Bookshelf' %>
-      <% end %>      
-      <span class="title"><%= yield(:title) %></span>
-    </div>
-    <div id="columns">
-      <div id="side">
+  <body>
+    <%= render 'layouts/header' %>
+    <section class="content">
+      <nav class="side_nav">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/faq">Questions</a></li>
+          <li><a href="/questions">Questions</a></li>
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
-      </div>
-      <div id="main">
+      </nav>      
+      <main class='<%= controller.controller_name %>'>
         <%= yield %>
-      </div>
-    </div> 
-    <div id="footer">
-      <div id="footer_container">
-        &copy; <%= copyright_notice_year_range(2018) %> <%= link_to "Svitlana Gubernator", "https://github.com/s-gubernator" , target: '_blank', rel: 'noopener' %>
-      </div>
-    </div> 
-  </body>  
+      </main>
+    </section>
+    <%= render 'layouts/footer' %>
+  </body> 
 </html>

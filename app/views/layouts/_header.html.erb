@@ -1,0 +1,6 @@
+<header class="main">
+  <%= link_to(store_index_path) do %>
+    <%= image_tag 'logo.svg', alt: 'Bookshelf' %>
+  <% end %>
+  <h1><%= yield(:title) %></h1>
+</header>
