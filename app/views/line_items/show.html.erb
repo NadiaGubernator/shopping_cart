@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Product:</strong>
-  <%= @line_item.product %>
+  <strong>Product name:</strong>
+  <%= @line_item.product.title %>
 </p>
 
 <p>
-  <strong>Cart:</strong>
-  <%= @line_item.cart %>
+  <strong>Cart id:</strong>
+  <%= @line_item.cart.id %>
 </p>
 
 <%= link_to 'Edit', edit_line_item_path(@line_item) %> |

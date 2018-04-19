@@ -25,7 +25,7 @@ header.main {
   background: #9c9;
   padding: 10px;
   margin: 0;
-  border-bottom: 2px solid #bfb;     
+  border-bottom: 2px solid #282;     
   img {
     position: absolute;
     top: 0;
@@ -33,12 +33,11 @@ header.main {
     width: 192px;
   }
   h1 {
-    letter-spacing: 0.25em;
-    font: small-caps 30px/30px "Times New Roman", serif;
+    letter-spacing: 0.2em;
+    font: small-caps 40px/40px "Times New Roman", serif;
     color: #282;
     text-align: center;
-    margin: 0;
-    padding-top: 7px;
+    margin: 0;   
   }
   @media (min-width: 30em) {
     text-align: left; // left align on desktop
@@ -63,6 +62,21 @@ header.main {
     padding-bottom: 1em;
     background: #141;
     text-align: center;  // mobile has centered nav
+ 
+    #cart {
+      article {
+        h2 {
+          margin-top: 0;
+        }
+        background: white;
+        border-radius: 0.5em;
+        margin: 1em;
+        padding: 1.414em;
+        @media (min-width: 30em) {
+          margin: 0; // desktop doesn't need this margin
+        }
+      }
+    }
 
     @media (min-width: 30em) {
       text-align: left; // desktop nav is left-aligned
@@ -117,22 +131,7 @@ header.main {
       input[type="submit"]:hover {
         color: white;
       }
-    }
-
-    #cart {
-      article {
-        h2 {
-          margin-top: 0;
-        }
-        background: white;
-        border-radius: 0.5em;
-        margin: 1em;
-        padding: 1.414em;
-        @media (min-width: 30em) {
-          margin: 0; // desktop doesn't need this margin
-        }
-      }
-    }
+    }    
   }
 
   main {
@@ -230,7 +229,8 @@ header.main {
 
 footer {  
   background: #9c9; 
-  border-top: 2px solid #bfb;
+  border-top: 1px solid #282; 
+  border-bottom: 1px solid #282;
   color: #282;  
   table {    
     width: 100%;      

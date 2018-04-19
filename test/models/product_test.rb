@@ -63,4 +63,9 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal :too_short, product.errors.details[:title].first[:error]
     assert_equal [I18n.t('errors.messages.too_short.other', count: 10)], product.errors[:title]
   end
+
+  test 'image url must be unique' do
+    product = new_product(image_url: products(:ruby).image_url)
+    assert_not product.valid?    
+  end
 end
