@@ -10,7 +10,7 @@
     <%= render 'layouts/shim' %>
   </head>
 
-  <body>
+  <body>    
     <%= render 'layouts/header' %>
     <section class="content">
       <nav class="side_nav">
@@ -28,8 +28,8 @@
       </nav>      
       <main class='<%= controller.controller_name %>'>
         <%= yield %>
-      </main>
+      </main>     
     </section>
-    <%= render 'layouts/footer' %>
+     <%= render 'layouts/footer' %> 
   </body> 
 </html>
