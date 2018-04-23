@@ -7,4 +7,10 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def render_if(condition, record)
+   if condition
+      render record
+    end
+  end
 end
