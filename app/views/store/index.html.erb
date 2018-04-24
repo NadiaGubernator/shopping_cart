@@ -4,13 +4,13 @@
 <% end %>
  
 <h1>Products Catalog</h1>
-<table>
+<!-- <table>
   <tr>
-    <td><%= @date.strftime("%H:%M %A") %></td>
-    <td><%= @date.strftime("%B %d, %Y") %></td>    
-    <td><%= @session_counter_message %></td>
+    <td><%#= @date.strftime("%H:%M %A") %></td>
+    <td><%#= @date.strftime("%B %d, %Y") %></td>    
+    <td><%#= @session_counter_message %></td>
   </tr>
-</table>  
+</table>  --> 
 <ul class="catalog">
   <% cache @products do %>
     <% @products.each do |product| %>
