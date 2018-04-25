@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:d54be72445a10a6d993698f4edafa6b1@albacore.redistogo.com:9707/
   channel_prefix: shopping_cart_production
