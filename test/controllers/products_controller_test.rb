@@ -5,8 +5,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     @product = products(:one)
     @update = {
       title:       'Lorem Ipsum',
-      description: 'Wibbles are fun!',
-      image_url:   'update.jpg',
+      description: 'Book for automation testing',
+      image_url:   'auto.jpg',
       price:       19.95
     }
   end
