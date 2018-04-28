@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create, :destroy, :decrement]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy, :decrement]
 
   # GET /line_items
   # GET /line_items.json
@@ -58,38 +58,40 @@ class LineItemsController < ApplicationController
 
   # DELETE /line_items/1
   # DELETE /line_items/1.json
-  def destroy    
-    @line_item.removing_item
+  # def destroy    
+  #   @line_item.removing_item
 
-    respond_to do |format|
-      format.html { redirect_to store_index_url }
-      format.json { head :no_content }
-    end
+  #   respond_to do |format|
+  #     format.html { redirect_to store_index_url }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
+  def destroy
+    @line_item.destroy
+    removing_response
   end
-
+  
   def decrement
-    @line_item = @cart.decrement_line_item(params[:id])
-    
-    respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to store_index_url }
-        format.js   { @current_item = @line_item }
-        format.json { head :ok }
-      else
-        format.html { render :edit }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
-    end      
+    @line_item = @cart.line_items.find_by_id(params[:id])
+    @line_item.decrement_or_destroy!        
+    removing_response
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_line_item
-      @line_item = LineItem.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params      
       params.require(:line_item).permit(:product_id)
     end
+
+     def set_line_item
+      @line_item = LineItem.find(params[:id])
+    end
+   
+    def removing_response
+      respond_to do |format|
+        format.html { redirect_to store_index_url }
+        format.js { @current_item = @line_item }
+        format.json { head :ok }
+      end
+    end   
 end

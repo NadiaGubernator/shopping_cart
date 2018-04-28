@@ -6,7 +6,11 @@ class LineItem < ApplicationRecord
     product.price * quantity
   end
 
-  def removing_item
-    (quantity > 1) ? update_attributes(quantity: quantity - 1) : destroy
+  # def removing_item
+  #   (quantity > 1) ? update_attributes(quantity: quantity - 1) : destroy
+  # end
+
+  def decrement_or_destroy!
+    quantity > 1 ? decrement!(:quantity) : destroy!
   end
 end
