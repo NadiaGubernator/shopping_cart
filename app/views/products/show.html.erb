@@ -1,24 +1,31 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "#{@product.title}".truncate(9)) %>
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<table>
+  <tbody> 
+    <tr>
+      <td><h4>Title:</h4></td>
+      <td><h3><%= @product.title %></h3></td>
+    </tr>
+    <tr>
+      <td><h4>Description:</h4></td>
+      <td><%= strip_tags(@product.description) %></td>
+    </tr>
+    <tr>
+      <td><h4>Image:</h4></td>
+       <td><%= image_tag(@product.image_url, class: 'list_image') %></td>
+    </tr>
+    <tr>
+      <td><h4>Price:</h4></td>
+       <td><%= number_to_currency(@product.price) %></td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <tr> 
+    <td><%= link_to 'Edit', edit_product_path(@product) %></td> 
+    <td><%= link_to 'Back', products_path %></td>
+  </tr>
+</table>

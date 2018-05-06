@@ -1,6 +1,15 @@
-<h1>Editing Product</h1>
+<% provide(:title, "Update '#{@product.title}'".truncate(9)) %>
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
 
-<%= render 'form', product: @product %>
+<div class="depot_form">
+  <%= render 'form', product: @product %>
+</div>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<table>
+  <tr> 
+    <td><%= link_to 'Show', @product %></td> 
+    <td><%= link_to 'Back', products_path %></td>
+  </tr>
+</table>

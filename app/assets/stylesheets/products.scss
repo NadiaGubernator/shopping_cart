@@ -8,6 +8,11 @@
   a {
     padding: 0.354em 0.5em;
     border-radius: 0.354em;
+    text-decoration: none;    
+    &:hover {
+      background: #282;
+      color: white;
+    }
   }
   table {
     border-collapse: collapse;
@@ -15,6 +20,18 @@
   td {
     padding: 0.5em;
     margin: 0;
+    .list_image {      
+      box-shadow: 0.176em 0.176em 0.354em 0px rgba(0,0,0,0.75);
+    }
+    a {
+      padding: 0.354em 0.5em;
+      border-radius: 0.354em;
+      text-decoration: none;    
+      &:hover {
+        background: #9c9;  
+        color: #141;      
+      }
+    }
   }
  
   tr.list_line_odd {
@@ -22,6 +39,10 @@
   }
  
   td.image {
+    .list_image {      
+      box-shadow: 0.176em 0.176em 0.354em 0px rgba(0,0,0,0.75);
+    }
+   
     // Hide this on mobile devices
     display: none;
  
@@ -54,7 +75,7 @@
  
   tfoot {
     td {
-      padding: 0.5em 0;
+      padding: 0.5em 0;      
     }
   }
 }

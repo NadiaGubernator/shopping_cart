@@ -4,14 +4,7 @@
 <% end %>
  
 <h1>Products</h1> 
-<table>
-  <tfoot>
-    <tr>
-      <td colspan="3">
-        <%= link_to 'New product', new_product_path %>
-      </td>
-    </tr>
-  </tfoot>
+<table>  
   <tbody>
     <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"> 
@@ -21,8 +14,7 @@
         <td class="description">
           <h1><%= product.title %></h1>
           <p>
-            <%= truncate(strip_tags(product.description),
-                         length: 80) %>
+            <%= truncate(strip_tags(product.description), length: 80) %>
           </p>
         </td> 
         <td class="actions">
@@ -40,4 +32,11 @@
       </tr>
     <% end %>
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">
+        <%= link_to 'New product', new_product_path %>
+      </td>
+    </tr>
+  </tfoot>
 </table>
