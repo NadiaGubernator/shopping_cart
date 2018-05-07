@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "Order #{@order.id}") %>
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
 
 <p>
   <strong>Name:</strong>

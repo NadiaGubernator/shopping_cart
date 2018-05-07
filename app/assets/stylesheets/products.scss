@@ -75,7 +75,12 @@
  
   tfoot {
     td {
-      padding: 0.5em 0;      
+      padding: 0.5em 0;            
+    }
+    td.price {
+      border-top: solid thin;
+      font-weight: bold;
+      padding-top: 1em;
     }
   }
 }

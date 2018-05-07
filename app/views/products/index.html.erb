@@ -27,6 +27,9 @@
                           method: :delete,
                           data: { confirm: 'Are you sure?' } %>
             </li>
+            <li>
+               <%= link_to 'Who bought', who_bought_product_path(product) %>
+            </li>
           </ul>
         </td>
       </tr>
@@ -36,7 +39,7 @@
     <tr>
       <td colspan="3">
         <%= link_to 'New product', new_product_path %>
-      </td>
-    </tr>
+      </td>      
+    </tr>      
   </tfoot>
 </table>
