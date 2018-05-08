@@ -12,8 +12,7 @@
 !/tmp/.keep
  
 # Ignore uploaded files in development
-/storage/* 
-/node_modules
+/storage/*
 /yarn-error.log 
 /public/assets
 
@@ -34,3 +33,5 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/npm-debug.log
