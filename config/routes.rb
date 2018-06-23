@@ -1,4 +1,4 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
 	root 'store#index', as: 'store_index'
 
 	resources :products do
@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   	patch :decrement, on: :member
   end
 
-  resources :orders   
+  resources :orders
+
+  get '/api', to: 'api#grab'
 end
