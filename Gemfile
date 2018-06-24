@@ -39,6 +39,8 @@ group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry'
+  gem 'rspec-rails'
 end
 
 group :development do
